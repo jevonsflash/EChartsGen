@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EChartsGen.Entities.style
+namespace ECharts.Entities.style
 {
     public class LinkStyle
     {

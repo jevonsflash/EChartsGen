@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EChartsGen.Entities;
 
-namespace EChartsGen.Entities.axis
+namespace ECharts.Entities.axis
 {
     public class TimeAxis : ChartAxis<TimeAxis>
     {
@@ -29,7 +28,7 @@ namespace EChartsGen.Entities.axis
 
         public TimeAxis()
         {
-            type = AxisType.time;
+            this.type = AxisType.time;
         }
     }
 }

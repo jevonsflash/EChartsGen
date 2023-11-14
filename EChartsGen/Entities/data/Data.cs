@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EChartsGen.Entities.data
+namespace ECharts.Entities.data
 {
     public class Data : BasicData<Data>
     {

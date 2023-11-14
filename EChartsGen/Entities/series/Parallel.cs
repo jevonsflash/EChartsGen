@@ -10,54 +10,50 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-using EChartsGen.Entities;
-
-namespace EChartsGen.Entities.series
-{
-    public class Parallel : ChartSeries<Parallel>
-    {
 
 
-        public Parallel()
+
+using ECharts.Entities.series;
+namespace ECharts.Entities.series {
+	public class Parallel : ChartSeries<Parallel> {
+		
+
+          public Parallel()
         {
-            type = ChartType.parallel;
+            this.type = ChartType.parallel;
         }
 
-        public Parallel(string name)
-            : this()
-        {
+          public Parallel(string name)
+              : this()
+          {
             this.name = name;
         }
 
-        public int? paralleIndex
-        {
-            get;
-            set;
-        }
+		public int? paralleIndex{
+			get;
+			set;
+		}
 
-        public bool? realtime
-        {
-            get;
-            set;
-        }
+		public bool? realtime{
+			get;
+			set;
+		}
 
 
-        /// 
-        /// <param name="paralleIndex"></param>
-        public Parallel ParalleIndex(int paralleIndex)
-        {
-            this.paralleIndex = paralleIndex;
-            return this;
-        }
+		/// 
+		/// <param name="paralleIndex"></param>
+		public Parallel ParalleIndex(int paralleIndex){
+		     this.paralleIndex=paralleIndex;
+		return this; 
+		}
 
-        /// 
-        /// <param name="realtime"></param>
-        public Parallel Realtime(bool realtime)
-        {
-            this.realtime = realtime;
-            return this;
-        }
+		/// 
+		/// <param name="realtime"></param>
+		public Parallel Realtime(bool realtime){
+		     this.realtime=realtime;
+		return this; 
+		}
 
-    }//end Parallel
+	}//end Parallel
 
 }//end namespace series

@@ -1,11 +1,11 @@
-﻿using EChartsGen.Entities.style;
+﻿using ECharts.Entities.style;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EChartsGen.Entities.series.force
+namespace ECharts.Entities.series
 {
     public class Link
     {
@@ -20,13 +20,13 @@ namespace EChartsGen.Entities.series.force
         public ItemStyle itemStyle { get; set; }
 
         public Link()
-        {
-
+        {             
+           
         }
 
         public Link(string name)
         {
-            this.name = name;
+            this.name = name;           
         }
 
 
@@ -59,8 +59,8 @@ namespace EChartsGen.Entities.series.force
         public ItemStyle ItemStyle()
         {
             if (itemStyle == null)
-                itemStyle = new ItemStyle();
-            return itemStyle;
+                this.itemStyle = new style.ItemStyle();
+            return this.itemStyle;
         }
     }
 }

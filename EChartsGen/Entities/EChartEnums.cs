@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace EChartsGen.Entities
+namespace ECharts.Entities
 {
     public enum LoadingEffectType
     {
@@ -344,10 +344,10 @@ namespace EChartsGen.Entities
         debounce,
         [EnumMember(Value = "fixRate")]
         fixRate
-
+        
     }
 
-    public enum CoordinateSystemType
+public enum CoordinateSystemType
     {
         [EnumMember(Value = "cartesian2d")] cartesian2d,
         [EnumMember(Value = "geo")] geo,
@@ -362,14 +362,14 @@ namespace EChartsGen.Entities
         rect,
         [EnumMember(Value = "polygon")]
         polygon,
-        [EnumMember(Value = "lineX")]
-        lineX,
-        [EnumMember(Value = "lineY")]
-        lineY,
-        [EnumMember(Value = "keep")]
-        keep,
-        [EnumMember(Value = "clear")]
-        clear
+         [EnumMember(Value = "lineX")]
+         lineX,
+         [EnumMember(Value = "lineY")]
+         lineY,
+         [EnumMember(Value = "keep")]
+         keep,
+         [EnumMember(Value = "clear")]
+         clear
     }
 
     public enum VisualMapType

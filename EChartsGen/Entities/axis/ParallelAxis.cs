@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EChartsGen.Entities.axis
+namespace ECharts.Entities.axis
 {
-    public class ParallelAxis : ChartAxis<ParallelAxis>
+    public class ParallelAxis:ChartAxis<ParallelAxis>
     {
         public int? dim { get; set; }
 
@@ -20,7 +20,7 @@ namespace EChartsGen.Entities.axis
 
         public ParallelAxis Name(string Name)
         {
-            name = name;
+            this.name = name;
             return this;
         }
     }

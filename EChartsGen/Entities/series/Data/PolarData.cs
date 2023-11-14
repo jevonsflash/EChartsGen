@@ -1,11 +1,11 @@
-﻿using EChartsGen.Entities.style;
+﻿using ECharts.Entities.style;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EChartsGen.Entities.series.Data
+namespace ECharts.Entities.series.data
 {
     public class PolarData
     {
@@ -21,9 +21,9 @@ namespace EChartsGen.Entities.series.Data
 
         public ItemStyle ItemStyle()
         {
-            if (itemStyle == null)
+            if (this.itemStyle == null)
             {
-                itemStyle = new ItemStyle();
+                itemStyle = new style.ItemStyle();
             }
             return itemStyle;
         }
@@ -39,7 +39,7 @@ namespace EChartsGen.Entities.series.Data
             this.name = name;
         }
 
-        public PolarData(object value, string name, ItemStyle itemStyle) : this(value, name)
+        public PolarData(object value, string name, ItemStyle itemStyle):this(value,name)
         {
             this.itemStyle = itemStyle;
         }
@@ -48,7 +48,7 @@ namespace EChartsGen.Entities.series.Data
         {
             if (values == null)
                 return this;
-            value = values.ToList();
+            this.value = values.ToList();
             return this;
         }
 

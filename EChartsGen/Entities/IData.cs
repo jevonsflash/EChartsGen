@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EChartsGen.Entities
+namespace ECharts.Entities
 {
-    public interface IData<T>
+    public interface IData<T> 
     {
 
         T Data(params object[] values);

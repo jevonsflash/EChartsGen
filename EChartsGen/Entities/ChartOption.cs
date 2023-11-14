@@ -1,15 +1,16 @@
-﻿using ECharts.Entities.feature;
+﻿using ECharts.Entities;
+using ECharts.Entities.axis;
+using ECharts.Entities.feature;
+using ECharts.Entities.series;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using EChartsGen.Entities.series;
-using EChartsGen.Entities.axis;
-using EChartsGen.Entities.bmap;
+using ECharts.Entities.bmap;
 
-namespace EChartsGen.Entities
+namespace ECharts.Entities
 {
     public class ChartOption
     {
@@ -52,8 +53,8 @@ namespace EChartsGen.Entities
 
         public IList<DataZoom> dataZoom { get; set; }
 
-        public IList<Grid> grid { get; set; }
-
+        public IList<Grid> grid { get; set; }       
+        
         public object polar { get; set; }
 
         public IList<Axis> xAxis { get; set; }
@@ -80,7 +81,7 @@ namespace EChartsGen.Entities
 
         public Parallel parallel { get; set; }
 
-        public IList<ParallelAxis> parallelAxis { get; set; }
+        public IList<axis.ParallelAxis> parallelAxis { get; set; }
 
         public RadiusAxis radiusAxis { get; set; }
 
@@ -93,10 +94,10 @@ namespace EChartsGen.Entities
         public ChartOption Calendar(params Calendar[] values)
         {
             if (values != null)
-                calendar = values.ToList();
+                this.calendar = values.ToList();
             return this;
         }
-
+       
 
         public RadiusAxis RadiusAxis(RadiusAxis radiusAxis)
         {
@@ -106,9 +107,9 @@ namespace EChartsGen.Entities
 
         public AngleAxis AngleAxis()
         {
-            if (angleAxis == null)
-                angleAxis = new AngleAxis();
-            return angleAxis;
+            if(this.angleAxis==null)
+               this.angleAxis = new AngleAxis();
+            return this.angleAxis;
         }
 
         public AngleAxis AngleAxis(AngleAxis angleAxis)
@@ -119,7 +120,7 @@ namespace EChartsGen.Entities
 
         public SingleAxis SingleAxis(SingleAxis singleAxis)
         {
-            this.singleAxis = singleAxis;
+            this.singleAxis =singleAxis;
             return (SingleAxis)this.singleAxis;
         }
 
@@ -135,24 +136,24 @@ namespace EChartsGen.Entities
 
         public Parallel Parallel()
         {
-            if (parallel == null)
-                parallel = new Parallel();
-            return parallel;
+            if(this.parallel==null)
+                this.parallel = new Parallel();
+            return this.parallel;
         }
 
-
+        
 
         public ToolBox ToolBox()
         {
             if (toolbox == null)
-                toolbox = new ToolBox();
+                toolbox = new Entities.ToolBox();
             return toolbox;
         }
 
 
         public AxisPointer AxisPointer()
         {
-            if (axisPointer == null)
+            if(this.axisPointer==null)
                 axisPointer = new AxisPointer();
             return axisPointer;
         }
@@ -168,8 +169,8 @@ namespace EChartsGen.Entities
             this.toolbox = toolbox;
             return this;
         }
-
-        public ChartOption NoDataEffect(string noDataEffect)
+        
+             public ChartOption NoDataEffect(string noDataEffect)
         {
             this.noDataEffect = noDataEffect;
             return this;
@@ -203,27 +204,25 @@ namespace EChartsGen.Entities
 
         public ChartOption Title(params Title[] values)
         {
-            title = values.ToList();
+            this.title = values.ToList();
             return this;
         }
 
-
+ 
         public ChartOption VisualMap(params object[] values)
         {
-            visualMap = values.ToList();
+            this.visualMap = values.ToList();
             return this;
         }
-
+        
 
         public ChartOption XAxis(params Axis[] values)
         {
-            if (values == null || values.Length == 0)
-            {
+            if (values == null || values.Length == 0) {
                 return this;
             }
 
-            if (xAxis == null)
-            {
+            if (xAxis == null) {
                 xAxis = new List<Axis>();
             }
 
@@ -263,14 +262,13 @@ namespace EChartsGen.Entities
 
         public ChartOption Series<T>(params T[] values)
         {
-            if (values == null || values.Length == 0)
-            {
+            if (values == null || values.Length == 0) { 
                 return null;
             }
 
-            if (series == null)
+            if (series==null)
             {
-                series = new List<object>();
+                this.series = new List<object>();
             }
             series = values.ToList();
             return this;
@@ -285,7 +283,7 @@ namespace EChartsGen.Entities
 
             if (series == null)
             {
-                series = new List<object>();
+                this.series = new List<object>();
             }
             series = values.ToList();
             return this;
@@ -293,21 +291,20 @@ namespace EChartsGen.Entities
 
         public Legend Legend()
         {
-            if (legend == null)
-                legend = new Legend();
-            return legend;
+            if (this.legend == null)
+                this.legend = new Entities.Legend();
+            return this.legend;
         }
 
         public ChartOption Polar(params Polar[] valuse)
         {
-            if (polar == null)
-                polar = new List<Polar>();
+            if (this.polar == null)
+                this.polar = new List<Entities.Polar>();
             polar = valuse.ToList();
             return this;
         }
 
-        public ChartOption Legend(Legend legend)
-        {
+        public ChartOption Legend(Legend legend) {
             this.legend = legend;
             return this;
         }
@@ -322,24 +319,22 @@ namespace EChartsGen.Entities
         {
             if (legend == null)
             {
-                legend = new Legend();
+                this.legend = new Legend();
             }
-            legend.data = values;
+            this.legend.data = values;
             return this;
         }
 
         public ChartOption Legend(params object[] values)
         {
-            if (legend == null)
-            {
-                legend = new Legend();
+            if (legend == null) {
+                this.legend = new Legend();
             }
-            legend.Data(values);
+            this.legend.Data(values);
             return this;
         }
 
-        public ToolTip ToolTip()
-        {
+        public ToolTip ToolTip() {
             if (tooltip == null)
                 tooltip = new ToolTip();
             return tooltip;
@@ -348,71 +343,71 @@ namespace EChartsGen.Entities
 
         public ChartOption DataZoom(params DataZoom[] valuse)
         {
-            if (dataZoom == null)
-                dataZoom = new List<DataZoom>();
+            if (this.dataZoom == null)
+                this.dataZoom = new List<DataZoom>();
             valuse.ToList().ForEach(v => dataZoom.Add(v));
             return this;
         }
 
         public ChartOption Grid(params Grid[] valuse)
         {
-            if (grid == null)
-                grid = new List<Grid>();
+            if (this.grid == null)
+                this.grid = new List<Entities.Grid>();
             valuse.ToList().ForEach(v => grid.Add(v));
             return this;
         }
 
         public Grid Grid()
         {
-            if (grid == null)
+            if (this.grid==null)
             {
-                grid = new List<Grid> { new Grid() };
-            }
-            return grid[0];
+                grid = new List<Grid> {new Grid()};
+            }            
+            return this.grid[0];
         }
 
         public Radar Radar()
         {
-            if (radar == null)
+            if(this.radar == null)
                 radar = new Radar();
-            return radar;
+            return this.radar;
         }
 
         public BMap BMap()
         {
-            if (bmap == null)
-                bmap = new BMap();
-            return bmap;
+            if(this.bmap==null)
+                bmap =new BMap();
+            return this.bmap;
         }
 
         public Geo Geo()
         {
-            if (geo == null)
+            if (this.geo==null)
             {
                 geo = new Geo();
             }
-            return geo;
+            return this.geo;
         }
 
         public Brush Brush()
         {
-            if (brush == null)
+            if(this.brush == null)
                 brush = new Brush();
-            return brush;
+            return this.brush;
         }
 
         public TimeLine TimeLine()
         {
-            if (timeline == null)
-                timeline = new TimeLine();
-            return timeline;
+            if (this.timeline == null)
+                this.timeline = new TimeLine();
+            return this.timeline;
         }
 
         public ChartOption BaseOption()
         {
-            if (baseOption == null)
-                baseOption = new ChartOption();
-            return baseOption;
+            if(this.baseOption == null)
+                this.baseOption = new ChartOption();
+            return this.baseOption;
         }
 
         public ChartOption Animation(bool animation)
@@ -485,6 +480,6 @@ namespace EChartsGen.Entities
         }
 
 
-
+        
     }
 }

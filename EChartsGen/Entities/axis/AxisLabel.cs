@@ -1,11 +1,11 @@
-﻿using EChartsGen.Entities.style;
+﻿using ECharts.Entities.style;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EChartsGen.Entities.axis
+namespace ECharts.Entities.axis
 {
     public class AxisLabel
     {
@@ -26,7 +26,7 @@ namespace EChartsGen.Entities.axis
         public TextStyle TextStyle()
         {
             if (textStyle == null)
-                textStyle = new TextStyle();
+                textStyle = new style.TextStyle();
             return textStyle;
         }
 
