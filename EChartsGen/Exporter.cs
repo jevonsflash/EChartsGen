@@ -14,7 +14,7 @@ namespace EChartsGen
     {
         private static readonly string basePath = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
 
-        public Task<string> Export(ExportOption exportOption)
+        public Task<string> ExportAsync(ExportOption exportOption)
         {
             if (string.IsNullOrEmpty(exportOption.ChartOptionPath) && exportOption.ChartOption == default)
             {

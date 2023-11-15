@@ -12,11 +12,11 @@ namespace EChartsGen.Tests
     {
         private static readonly string basePath = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
         [TestMethod()]
-        public void ExportTest()
+        public  void ExportTest()
         {
             var optionPath = Path.Combine(basePath, "js\\option.json");
             Exporter exporter = new Exporter();
-            var pngPath = exporter.Export(new EChartsGen.ExportOption() { ChartOptionPath = optionPath });
+            var pngPath =  exporter.ExportAsync(new EChartsGen.ExportOption() { ChartOptionPath = optionPath }).Result;
             Assert.IsNotNull(pngPath);
         }
     }

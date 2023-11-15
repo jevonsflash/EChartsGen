@@ -48,7 +48,7 @@ namespace WordTemplateTool_EChartsSample
 
         private static string GetPngGraphic(string title, int passCount, int failedCount)
         {
-            return exporter.Export(new EChartsGen.ExportOption()
+            return exporter.ExportAsync(new EChartsGen.ExportOption()
             {
                 Height = 400,
                 Width = 580,
