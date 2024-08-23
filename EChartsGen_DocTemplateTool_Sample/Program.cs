@@ -77,7 +77,8 @@ namespace WordTemplateTool_EChartsSample
                                 }
                        }
                     }
-                }
+                },
+                OutputPath="D:/out"
 
             }).Result;
         }

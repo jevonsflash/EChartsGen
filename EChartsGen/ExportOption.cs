@@ -28,5 +28,10 @@ namespace EChartsGen
         /// </summary>
         public int Width { get; set; }
         public string Format { get; set; }
+
+        /// <summary>
+        /// 图片文件的生成目录,若为空则默认生成至工作目录下\libs\phantomjs-2.1.1-windows\tmp
+        /// </summary>
+        public string OutputPath { get; set; }
     }
 }

@@ -175,6 +175,9 @@
         }
         params.outfile = tmpDir + "/" + new Date().getTime() + ".png";
     }
+    else {
+        params.outfile = params.outfile + "/" + new Date().getTime() + ".png";
+    }
 
     // render the image
     render(params);

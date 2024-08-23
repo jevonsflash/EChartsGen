@@ -53,6 +53,8 @@ namespace EChartsGen
             phantomJS.ErrorReceived += (sender, e) =>
             {
                 Console.WriteLine("PhantomJS error: {0}", e.Data);
+                phantomJS.Abort();
+
             };
             var jsonSetting = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
 
@@ -62,9 +64,9 @@ namespace EChartsGen
             if (exportOption.ChartOption != null) args = args.Concat(new string[] { "-options", JsonConvert.SerializeObject(exportOption.ChartOption, jsonSetting) }).ToArray();
             if (exportOption.Height > 0) args = args.Concat(new string[] { "-height", exportOption.Height.ToString() }).ToArray();
             if (exportOption.Width > 0) args = args.Concat(new string[] { "-width", exportOption.Width.ToString() }).ToArray();
+            if (!string.IsNullOrEmpty(exportOption.OutputPath)) args=args.Concat(new string[] { "-outfile", exportOption.OutputPath }).ToArray();
 
             phantomJS.Run(scriptPath, args);
-            phantomJS.Abort();
             return tcs.Task;
         }
     }
